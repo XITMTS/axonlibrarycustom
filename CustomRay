@@ -297,45 +297,45 @@ local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
 		Default = {
-			TextColor = Color3.fromRGB(230, 220, 255),
+			TextColor = Color3.fromRGB(225, 225, 235),
 
-			Background = Color3.fromRGB(15, 10, 25),
-			Topbar = Color3.fromRGB(22, 14, 38),
-			Shadow = Color3.fromRGB(10, 5, 18),
+			Background = Color3.fromRGB(12, 10, 18),
+			Topbar = Color3.fromRGB(18, 16, 24),
+			Shadow = Color3.fromRGB(6, 5, 10),
 
-			NotificationBackground = Color3.fromRGB(18, 12, 30),
-			NotificationActionsBackground = Color3.fromRGB(230, 220, 255),
+			NotificationBackground = Color3.fromRGB(16, 14, 22),
+			NotificationActionsBackground = Color3.fromRGB(225, 225, 235),
 
-			TabBackground = Color3.fromRGB(50, 35, 75),
-			TabStroke = Color3.fromRGB(60, 40, 90),
-			TabBackgroundSelected = Color3.fromRGB(130, 70, 220),
-			TabTextColor = Color3.fromRGB(200, 180, 240),
+			TabBackground = Color3.fromRGB(24, 22, 32),
+			TabStroke = Color3.fromRGB(38, 35, 50),
+			TabBackgroundSelected = Color3.fromRGB(110, 65, 185),
+			TabTextColor = Color3.fromRGB(160, 155, 175),
 			SelectedTabTextColor = Color3.fromRGB(255, 255, 255),
 
-			ElementBackground = Color3.fromRGB(22, 15, 38),
-			ElementBackgroundHover = Color3.fromRGB(30, 20, 50),
-			SecondaryElementBackground = Color3.fromRGB(18, 12, 32),
-			ElementStroke = Color3.fromRGB(45, 30, 70),
-			SecondaryElementStroke = Color3.fromRGB(38, 25, 60),
+			ElementBackground = Color3.fromRGB(20, 18, 28),
+			ElementBackgroundHover = Color3.fromRGB(26, 24, 36),
+			SecondaryElementBackground = Color3.fromRGB(16, 14, 24),
+			ElementStroke = Color3.fromRGB(36, 33, 48),
+			SecondaryElementStroke = Color3.fromRGB(32, 29, 44),
 
-			SliderBackground = Color3.fromRGB(60, 30, 120),
-			SliderProgress = Color3.fromRGB(130, 70, 220),
-			SliderStroke = Color3.fromRGB(100, 50, 180),
+			SliderBackground = Color3.fromRGB(30, 26, 42),
+			SliderProgress = Color3.fromRGB(110, 65, 185),
+			SliderStroke = Color3.fromRGB(55, 45, 75),
 
-			ToggleBackground = Color3.fromRGB(20, 13, 35),
-			ToggleEnabled = Color3.fromRGB(130, 70, 220),
-			ToggleDisabled = Color3.fromRGB(50, 35, 75),
-			ToggleEnabledStroke = Color3.fromRGB(160, 100, 255),
-			ToggleDisabledStroke = Color3.fromRGB(70, 50, 100),
-			ToggleEnabledOuterStroke = Color3.fromRGB(90, 50, 160),
-			ToggleDisabledOuterStroke = Color3.fromRGB(40, 28, 62),
+			ToggleBackground = Color3.fromRGB(18, 16, 26),
+			ToggleEnabled = Color3.fromRGB(110, 65, 185),
+			ToggleDisabled = Color3.fromRGB(30, 27, 42),
+			ToggleEnabledStroke = Color3.fromRGB(130, 85, 210),
+			ToggleDisabledStroke = Color3.fromRGB(45, 40, 60),
+			ToggleEnabledOuterStroke = Color3.fromRGB(70, 45, 120),
+			ToggleDisabledOuterStroke = Color3.fromRGB(32, 29, 44),
 
-			DropdownSelected = Color3.fromRGB(40, 25, 65),
-			DropdownUnselected = Color3.fromRGB(22, 15, 38),
+			DropdownSelected = Color3.fromRGB(28, 25, 40),
+			DropdownUnselected = Color3.fromRGB(20, 18, 28),
 
-			InputBackground = Color3.fromRGB(20, 13, 35),
-			InputStroke = Color3.fromRGB(55, 35, 90),
-			PlaceholderColor = Color3.fromRGB(150, 130, 180)
+			InputBackground = Color3.fromRGB(18, 16, 26),
+			InputStroke = Color3.fromRGB(40, 36, 55),
+			PlaceholderColor = Color3.fromRGB(120, 115, 135)
 		},
 
 		Ocean = {
@@ -791,13 +791,13 @@ local SelectedTheme = RayfieldLibrary.Theme.Default
 -- ══════════════════════════════════════════════════
 
 local function ApplyAxonGradients()
-	-- Main background gradient (diagonal)
+	-- Main background gradient (very subtle)
 	local mainGrad = Instance.new("UIGradient")
 	mainGrad.Name = "AxonGradient"
 	mainGrad.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(15, 10, 25)),
-		ColorSequenceKeypoint.new(0.5, Color3.fromRGB(20, 12, 35)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 8, 22))
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(14, 12, 20)),
+		ColorSequenceKeypoint.new(0.5, Color3.fromRGB(12, 10, 18)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(10, 9, 16))
 	})
 	mainGrad.Rotation = 135
 	for _, old in ipairs(Rayfield.Main:GetChildren()) do
@@ -805,12 +805,12 @@ local function ApplyAxonGradients()
 	end
 	mainGrad.Parent = Rayfield.Main
 
-	-- Topbar gradient
+	-- Topbar gradient (subtle)
 	local topGrad = Instance.new("UIGradient")
 	topGrad.Name = "AxonGradient"
 	topGrad.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(28, 16, 48)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(18, 10, 32))
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 18, 28)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 14, 22))
 	})
 	topGrad.Rotation = 90
 	for _, old in ipairs(Rayfield.Main.Topbar:GetChildren()) do
@@ -819,19 +819,19 @@ local function ApplyAxonGradients()
 	topGrad.Parent = Rayfield.Main.Topbar
 
 	-- CornerRepair match topbar
-	Rayfield.Main.Topbar.CornerRepair.BackgroundColor3 = Color3.fromRGB(28, 16, 48)
+	Rayfield.Main.Topbar.CornerRepair.BackgroundColor3 = Color3.fromRGB(20, 18, 28)
 
-	-- Divider purple accent
+	-- Divider subtle accent
 	if Rayfield.Main.Topbar:FindFirstChild("Divider") then
-		Rayfield.Main.Topbar.Divider.BackgroundColor3 = Color3.fromRGB(100, 50, 180)
+		Rayfield.Main.Topbar.Divider.BackgroundColor3 = Color3.fromRGB(55, 45, 80)
 	end
 
-	-- Elements container gradient
+	-- Elements container gradient (barely visible)
 	local elemGrad = Instance.new("UIGradient")
 	elemGrad.Name = "AxonGradient"
 	elemGrad.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(22, 15, 38)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(16, 10, 28))
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(18, 16, 26)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 12, 22))
 	})
 	elemGrad.Rotation = 120
 	for _, old in ipairs(Rayfield.Main.Elements:GetChildren()) do
@@ -839,7 +839,7 @@ local function ApplyAxonGradients()
 	end
 	elemGrad.Parent = Rayfield.Main.Elements
 
-	-- TabList buttons gradient
+	-- TabList buttons gradient (subtle dark)
 	for _, tabbtn in ipairs(Rayfield.Main.TabList:GetChildren()) do
 		if tabbtn.ClassName == "Frame" and tabbtn.Name ~= "Placeholder" and tabbtn.Name ~= "Template" then
 			for _, old in ipairs(tabbtn:GetChildren()) do
@@ -848,8 +848,8 @@ local function ApplyAxonGradients()
 			local tabGrad = Instance.new("UIGradient")
 			tabGrad.Name = "AxonGradient"
 			tabGrad.Color = ColorSequence.new({
-				ColorSequenceKeypoint.new(0, Color3.fromRGB(55, 30, 90)),
-				ColorSequenceKeypoint.new(1, Color3.fromRGB(35, 20, 60))
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(28, 25, 40)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(22, 20, 32))
 			})
 			tabGrad.Rotation = 90
 			tabGrad.Parent = tabbtn
@@ -865,8 +865,8 @@ local function ApplyElementGradient(element)
 	local grad = Instance.new("UIGradient")
 	grad.Name = "AxonElementGrad"
 	grad.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(25, 17, 42)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(18, 12, 32))
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(22, 20, 32)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(17, 15, 25))
 	})
 	grad.Rotation = 120
 	grad.Parent = element
@@ -2576,7 +2576,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Divider.Visible = true
 			Divider.Parent = TabPage
 
-			Divider.Divider.BackgroundColor3 = Color3.fromRGB(100, 50, 180)
+			Divider.Divider.BackgroundColor3 = Color3.fromRGB(50, 42, 72)
 			Divider.Divider.BackgroundTransparency = 1
 			TweenService:Create(Divider.Divider, TweenInfo.new(0.5, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0.85}):Play()
 
@@ -3328,8 +3328,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 				local glow = Instance.new("UIGradient")
 				glow.Name = "CheckGlow"
 				glow.Color = ColorSequence.new({
-					ColorSequenceKeypoint.new(0, Color3.fromRGB(160, 100, 255)),
-					ColorSequenceKeypoint.new(1, Color3.fromRGB(100, 50, 200))
+					ColorSequenceKeypoint.new(0, Color3.fromRGB(120, 75, 200)),
+					ColorSequenceKeypoint.new(1, Color3.fromRGB(90, 55, 165))
 				})
 				glow.Rotation = 135
 				glow.Parent = Toggle.Switch.Indicator
@@ -3362,8 +3362,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 				local glow = Instance.new("UIGradient")
 				glow.Name = "CheckGlow"
 				glow.Color = ColorSequence.new({
-					ColorSequenceKeypoint.new(0, Color3.fromRGB(160, 100, 255)),
-					ColorSequenceKeypoint.new(1, Color3.fromRGB(100, 50, 200))
+					ColorSequenceKeypoint.new(0, Color3.fromRGB(120, 75, 200)),
+					ColorSequenceKeypoint.new(1, Color3.fromRGB(90, 55, 165))
 				})
 				glow.Rotation = 135
 				glow.Parent = Toggle.Switch.Indicator
@@ -3514,8 +3514,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			local sliderGrad = Instance.new("UIGradient")
 			sliderGrad.Name = "AxonSliderGrad"
 			sliderGrad.Color = ColorSequence.new({
-				ColorSequenceKeypoint.new(0, Color3.fromRGB(90, 40, 180)),
-				ColorSequenceKeypoint.new(1, Color3.fromRGB(160, 90, 255))
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(80, 50, 150)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(120, 75, 200))
 			})
 			sliderGrad.Rotation = 0
 			sliderGrad.Parent = Slider.Main.Progress
